@@ -4,9 +4,9 @@ pelican-svbhack is a responsive theme for [Pelican](http://getpelican.com), it i
 
 ## DEMO
 
-You can see the [theme in action](http://www.giuliofidente.com/).
+WORK IN PROGRESS
 
-![theme screenshot](https://raw.github.com/gfidente/pelican-svbhack/master/screenshot.png)
+
 
 ## FEATURES
 
@@ -22,7 +22,7 @@ You can see the [theme in action](http://www.giuliofidente.com/).
 
 ## INSTALL
 
-Clone the [repository](https://github.com/gfidente/pelican-svbhack), edit your `pelicanconf.py` and modify the `THEME` variable to make it point to the downloaded theme location.
+Clone the [repository](https://github.com/martinsam/pelican-miwebperf), edit your `pelicanconf.py` and modify the `THEME` variable to make it point to the downloaded theme location.
 
 ## PELICANCONF.PY
 
@@ -46,8 +46,7 @@ When developing locally, you may want to set the following variable: `SITEURL = 
 - A different Pygmentize theme can be used by editing `./Makefile` and running `make pygments`.
 
 ## AUTHOR
-
-pelican-svbhack is authored by Giulio Fidente.
+pelican-miwebperf is authored by Samuel Martin inspired by pelican-svbhack Giulio Fidente.
 
 ## LICENSE
 
