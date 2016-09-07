@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block head %}
+<meta name="keywords" content="{{ article.tags|join(', ')  }}">
+{% endblock %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+<article itemscope itemtype="http://schema.org/BlogPosting">
+<link itemprop="mainEntityOfPage" href="{{ SITEURL }}/{{ article.url }}" />
+<!--
+<img itemprop="image" src="../media/logo.png" alt="hotel logo" />-->
+  <div class="article_title">
+    <h3><a href="{{ SITEURL }}/{{ article.url }}" itemprop="headline">{{ article.title }}</a></h3>
+  </div>
+  <div class="article_text">
+    <span itemprop="description">{{ article.summary }}</span>
+    <span itemprop="articleBody">{{ article.content }}</span>
+    
+  </div>
+  <div class="article_meta">
+    <p> Publié le  <time itemprop="datePublished" datetime="{{article.date}}"> <time itemprop="dateModified" datetime="{{article.date}}"> {{ article.locale_date }} par
+    <span itemprop="author">Samuel Martin</span></p>
+
+    <div class="hidden">
+    <p itemscope  itemtype="http://schema.org/Organization">
+    <span itemprop="name">Mï.fr</span>
+    <a itemprop="url" href="http://mï.fr/">Accueil</a>
+     <img itemprop="logo" src="{{ SITEURL }}/theme/images/samuel-martin.jpg" />
+      
+    </div>
+
+    </p>
+    <p>Categorie: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+      {% if article.tags %} &ndash; Tags:
+      {% for tag in article.tags %}
+      <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
+      {% endfor %}
+      {% endif %}
+    </p>
+  </div>
+
+
+  {% if DISQUS_SITENAME %}
+  <div id="article_comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_identifier = "{{ article.url }}";
+        (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+         })();
+    </script>
+  </div>
+  {% endif %}
+ 
+</article>
+{% endblock %}

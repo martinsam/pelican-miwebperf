@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+ <!-- <link href="//fonts.googleapis.com/css?family=Dosis|Open+Sans:300" rel="stylesheet">  -->
+
+<!--   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css">
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments.css"> -->
+
+<meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="{{ AUTHOR }}">
+<meta name="description" content="Mï.fr : Espace personnel traitant les sujets de performance web, de sécurité et de qualité web en général">
+<meta name="google-site-verification" content="0-1fllFj2n2fp5CQAkBrFpUrAwK0FZ8MsHUX4hc9OpU" />
+<meta http-equiv="content-language" content="fr" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+
+<meta property="og:type" content="website" />
+<!-- Open Graph Meta Data -->
+<meta property="og:title" content="Mï.fr : Blog pro - Samuel Martin" />
+<meta property="og:description" content="Mï.fr : Espace personnel traitant les sujets de performance web, de sécurité et de qualité web en général" />
+<meta property="og:image" content="http://mï.fr/theme/images/samuel-martin.jpg" />
+<meta property="og:url" content="http://mï.fr" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="http://mï.fr" />
+<meta name="twitter:title" content="Mï.fr : Blog pro - Samuel Martin" />
+<meta name="twitter:description" content="Mï.fr : Espace personnel traitant les sujets de performance web, de sécurité et de qualité web en général" />
+<meta name="twitter:image" content="http://mï.fr/theme/images/samuel-martin.jpg" />
+<meta name="twitter:site" content="martinsam" />
+<meta name="twitter:creator" content="martinsam" />
+
+  {% if FEED_ALL_ATOM %}
+  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom" />
+  {% endif %}
+  {% if FEED_ALL_RSS %}
+  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS" />
+  {% endif %}
+
+  {% block head %}
+  {% endblock %}
+
+  <title>
+    {% block title %}{% endblock %} &ndash; {{ SITENAME }}
+  </title>
+
+  {% include "modules/analytics.html" %}
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #4d4d4d;
+  font-family: 'Open Sans', arial, sans-serif;
+  font-size: 16px;
+}
+
+.hidden{
+  display: none;
+}
+aside img{
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  display: inline;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+hr {
+  color: #eeeeee;
+  background-color: #eeeeee;
+  height: 1px;
+  border: none;
+}
+img {
+  max-width: 100%;
+}
+aside div#user_meta {
+  padding: 40px;
+  text-align: center;
+}
+aside div#user_meta h2 {
+  margin: 15px 0 5px 0;
+}
+aside div#user_meta p {
+  margin: 0 0 15px 0;
+  font-size: 14px;
+}
+aside div#user_meta ul {
+  margin: 40px 0 0 0;
+  padding-left: 0;
+  font-size: 16px;
+  list-style-type: none;
+}
+aside div#user_meta ul li {
+  display: inline;
+  line-height: 3em;
+}
+aside div#user_meta ul li a {
+  padding: 5px 15px 5px 15px;
+  border: 3px solid #eeeeee;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #999999;
+}
+main header {
+  padding: 40px;
+  border-top: #eeeeee 1px solid;
+  border-bottom: #eeeeee 1px solid;
+}
+main header p {
+  font-weight: bold;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+main article {
+  max-width: 640px;
+  padding: 40px;
+}
+main article div.article_title{
+  font-size:1.2em;
+    font-family: 'Dosis', sans-serif;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+main article div.article_text {
+  line-height: 1.6em;
+}
+main article div.article_text a {
+  text-decoration: underline;
+}
+main article div.article_text code {
+  margin: 2px;
+  padding: 0;
+  color: #000000;
+  font-size: 14px;
+  font-family: 'PT Mono', monospace;
+  background: #eeeeee;
+}
+main article div.article_text pre {
+  margin: 22px 2px 22px 2px;
+  padding: 2px 2px 2px 5px;
+  color: #000000;
+  border-left: 3px solid #0e94ec;
+  font-size: 14px;
+  font-family: 'PT Mono', monospace;
+  background: #eeeeee;
+  line-height: 1.4em;
+  overflow-x: auto;
+}
+main article div.article_text blockquote {
+  margin: 22px 2px 22px 2px;
+  padding-left: 40px;
+  color: #999999;
+  font-style: italic;
+}
+main article div.gist {
+  line-height: .875em;
+}
+main article div.article_meta {
+  font-size: 12px;
+  color: #999999;
+}
+main footer {
+  border-top: #eeeeee 1px solid;
+  padding: 40px;
+}
+  </style>
+</head>
+
+<body>
+  
+
+  <main>
+    <header>
+      <p>
+      <a href="{{ SITEURL }}">Index</a> &brvbar; <a href="{{ SITEURL }}/archives.html">Archives</a>
+      {% if FEED_ALL_ATOM %}
+      &brvbar; <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom</a>
+      {% endif %}
+      {% if FEED_ALL_RSS %}
+      &brvbar; <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">RSS</a>
+      {% endif %}
+      {% block header %}
+      {% endblock header %}
+      </p>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
+
+    <div id="ending_message">
+      <p>&copy; {{ AUTHOR }}. Built using <a href="http://getpelican.com" target="_blank">Pelican</a>. Theme by Giulio Fidente on <a href="https://github.com/gfidente/pelican-svbhack" target="_blank">github</a>. {% if INTERNET_DEFENSE_LEAGUE %}Member of the <a href="http://internetdefenseleague.org">Internet Defense League</a>.{% endif %}</p>
+    </div>
+  </main>
+  <aside>
+    <div id="user_meta" class="vcard">
+      <a href="{{ SITEURL }}">
+        {% if USER_LOGO_URL %}
+        <img src="{{ USER_LOGO_URL }}" alt="logo">
+        {% else %}
+        <img src="{{ SITEURL }}/theme/images/samuel-martin.jpg" alt="logo">
+        {% endif %}
+      </a>
+
+              <h1 class="fn n"><a class="url" href="{{ SITEURL }}">
+        <span class="given-name">Samuel</span>&nbsp; 
+       <span class="family-name">Martin</span> 
+      </a></h1>
+      <p>{{ TAGLINE }}</p>
+
+             <p>
+          <a href="https://github.com/martinsam" rel="me">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAD1BMVEUzMzP///9mZmbMzMyZmZlO6MLaAAAAdElEQVR4Ad2RsQ7FMAgDax///81PQgwo8NSlU25JG1+tCp77cACE/8WoYFVCjXjJF8MSgZJ88CGQHznJOkZBbw2dFdRN8zkF5ntDU9C3wvtPhrrhZZbCiLysgY5V4KplXwby43KV6jTCTmHPM4h+TozbcRU/T6MBkg7i/4EAAAAASUVORK5CYII=" alt="Github" title="Checkout my code on Github" width="32" height="32">
+          </a>
+          <a href="https://twitter.com/martinsam" rel="me">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAD1BMVEUzMzP///9mZmbMzMyZmZlO6MLaAAAAX0lEQVR42uWRuQ3AMAwD+e0/cwrBKWjEHiBXCeCJKoT/IhyJSQspzVo5B1crmZm4hLRAa4YhqBOzpVdAIRa33ChcQlCoDOFsGBupgrMRFHXEX1865LJv/XH/aEcS/soDvPUBUMglQN0AAAAASUVORK5CYII=" alt="Twitter" title="Follow me on Twitter" width="32" height="32">
+          </a>
+          <a href="https://facebook.com/martin.samuel" rel="me">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAAAAACT4cgpAAAAVElEQVR4AWMwRgOUCGSemYYikPP//x8UgfP///9EFrD8j6bC5v+ftGQUAZAGkgTScv7/TEuDCEAtRdiCEPiJT8Wc8///nDmGYcuQELA8c4ziqEQAAFbom/Jbeg+lAAAAAElFTkSuQmCC" alt="Facebook" title="Follow me on Facebook" width="32" height="32">
+          </a>
+        </p>
+
+      <p class="nickname hidden">martinsam</p>
+
+      <p>Vous pouvez me contacter par courrier électronique à 
+    <a class="email" href="mailto:martin.sam@gmail.com">martin.sam@gmail.com</a>,  par 
+    <span class="tel">
+      <span class="type">mobile</span>:
+      <span class=value>+33 614157941</span>
+      </span>
+    ou me joindre à l'adresse suivante :</p>
+   <div class="adr">
+    <span class="street-address">
+      8 Route du Culan
+    </span>
+    <span class="postal-code">18370</span>&nbsp;<span class="locality">Préveranges</span> <br>
+     <span class="country-name">France</span>
+     
+   </div>
+  
+
+
+      <ul>
+        {% for title, link in MENUITEMS %}
+        <li><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
+        {% if DISPLAY_PAGES_ON_MENU %}{% for p in pages %}
+        <li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+        {% endfor %}{% endif %}
+        {% for name, link in LINKS %}
+        <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
+        {% endfor %}
+
+        {% for name, link in SOCIAL %}
+        <!--<li><a href="{{ link }}" target="_blank">{{ name }}</a></li>-->
+        {% endfor %}
+      </ul>
+      
+     
+
+    </div>
+  </aside>
+  {% include "modules/idl.html" %}
+</body>
+</html>
+{% assets filters="cssmin", output="css/style.min.css", "css/fonts.css", "css/style.css", "css/pygments.css" %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}" media="all">
+   <!--  <noscript><link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}"></noscript> -->
+{% endassets %}
