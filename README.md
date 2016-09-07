@@ -1,6 +1,6 @@
 # MIWEBPERF
 
-pelican-svbhack is a responsive theme for [Pelican](http://getpelican.com), it is my hack of a svbtle-like theme.
+pelican-svbhack is a responsive theme for [Pelican](http://getpelican.com), it is my hack of a pelican-svbhack theme.
 
 ## DEMO
 
